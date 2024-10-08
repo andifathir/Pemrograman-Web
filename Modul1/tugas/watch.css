@@ -1,0 +1,505 @@
+.desktop {
+    background-color: #000000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .desktop .div {
+    background-color: #000000;
+    overflow: hidden;
+    width: 1440px;
+    height: 2500px;
+    position: relative;
+  }
+  
+  .desktop .footer {
+    position: absolute;
+    width: 1451px;
+    height: 376px;
+    top: 2124px;
+    left: -7px;
+    background-color: transparent;
+  }
+  
+  .desktop .overlap-group {
+    position: relative;
+    width: 1447px;
+    height: 376px;
+  }
+  
+  .desktop .rectangle {
+    position: absolute;
+    width: 1439px;
+    height: 376px;
+    top: 0;
+    left: 8px;
+    background-color: #ffffff;
+  }
+  
+  .desktop .socials {
+    position: absolute;
+    width: 35px;
+    height: 196px;
+    top: 73px;
+    left: 1251px;
+  }
+  
+  .desktop .frame {
+    display: flex;
+    flex-direction: column;
+    width: 129px;
+    height: 121px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    position: absolute;
+    top: 86px;
+    left: 941px;
+  }
+  
+  .desktop .text-wrapper {
+    position: relative;
+    width: 129px;
+    height: 23px;
+    margin-top: -24.8px;
+    margin-right: -0.09px;
+    font-family: "Italiana-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-2 {
+    position: relative;
+    width: 129px;
+    height: 23px;
+    margin-right: -0.09px;
+    font-family: "Italiana-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-3 {
+    position: relative;
+    width: 129px;
+    height: 23px;
+    margin-bottom: -22.8px;
+    margin-right: -0.09px;
+    font-family: "Italiana-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .frame-2 {
+    display: flex;
+    flex-direction: column;
+    width: 153px;
+    height: 153px;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: absolute;
+    top: 65px;
+    left: 532px;
+  }
+  
+  .desktop .text-wrapper-4 {
+    position: relative;
+    width: fit-content;
+    margin-top: -12.04px;
+    font-family: "Italiana-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-5 {
+    position: relative;
+    width: 153px;
+    height: 23px;
+    margin-left: -0.05px;
+    margin-right: -0.05px;
+    font-family: "Italiana-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-6 {
+    position: relative;
+    width: 108px;
+    height: 23px;
+    margin-bottom: -10.04px;
+    font-family: "Italiana-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-7 {
+    position: absolute;
+    width: 205px;
+    height: 61px;
+    top: 61px;
+    left: 117px;
+    font-family: "Island Moments-Regular", Helvetica;
+    font-weight: 400;
+    color: #c48936;
+    font-size: 64px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .it-s-not-just-about {
+    position: absolute;
+    width: 465px;
+    height: 49px;
+    top: 128px;
+    left: 0;
+    font-family: "Italianno-Regular", Helvetica;
+    font-weight: 400;
+    color: #c48936;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .desktop .div-2 {
+    position: absolute;
+    width: 1802px;
+    height: 1964px;
+    top: 0;
+    left: 0;
+  }
+  
+  .desktop .overlap {
+    position: absolute;
+    width: 1708px;
+    height: 520px;
+    top: 1323px;
+    left: 82px;
+  }
+  
+  .desktop .frame-3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 94px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .desktop .img {
+    position: relative;
+    width: 500px;
+    height: 500px;
+  }
+  
+  .desktop .rectangle-2 {
+    position: relative;
+    width: 160px;
+    height: 500px;
+  }
+  
+  .desktop .ellipse {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    top: 237px;
+    left: 1280px;
+    background-color: #a3a3a3;
+    border-radius: 28px;
+  }
+  
+  .desktop .arrow-right-wide {
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    top: 247px;
+    left: 1288px;
+    object-fit: cover;
+  }
+  
+  .desktop .arrow-left-wide-fill-wrapper {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    top: 1555px;
+    left: 26px;
+    background-color: #a3a3a3;
+    border-radius: 28px;
+  }
+  
+  .desktop .arrow-left-wide-fill {
+    position: absolute;
+    width: 41px;
+    height: 35px;
+    top: 10px;
+    left: 7px;
+    object-fit: cover;
+  }
+  
+  .desktop .rolex-deepsea {
+    top: 1872px;
+    left: 1272px;
+    position: absolute;
+    width: 500px;
+    height: 92px;
+    font-family: "Gentium Basic-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .desktop .rolex-submariner {
+    top: 1861px;
+    left: 92px;
+    position: absolute;
+    width: 500px;
+    height: 92px;
+    font-family: "Gentium Basic-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .desktop .audemars-pigues {
+    position: absolute;
+    width: 500px;
+    height: 92px;
+    top: 1872px;
+    left: 686px;
+    font-family: "Gentium Basic-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .desktop .overlap-2 {
+    position: absolute;
+    width: 432px;
+    height: 119px;
+    top: 1114px;
+    left: 504px;
+  }
+  
+  .desktop .new-releases-line {
+    position: absolute;
+    width: 271px;
+    height: 2px;
+    top: 89px;
+    left: 81px;
+    object-fit: cover;
+  }
+  
+  .desktop .text-wrapper-8 {
+    position: absolute;
+    width: 432px;
+    height: 119px;
+    top: 0;
+    left: 0;
+    font-family: "Gentium Basic-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .desktop .overlap-3 {
+    position: absolute;
+    width: 1440px;
+    height: 1024px;
+    top: 0;
+    left: 0;
+    background-image: url(./img/wallpaperflare-com-wallpaper-1.png);
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  
+  .desktop .arrow-down-wide-line {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 958px;
+    left: 701px;
+  }
+  
+  .desktop .overlap-group-2 {
+    position: absolute;
+    width: 366px;
+    height: 39px;
+    top: 864px;
+    left: 537px;
+  }
+  
+  .desktop .line {
+    position: absolute;
+    width: 45px;
+    height: 3px;
+    top: 18px;
+    left: 0;
+  }
+  
+  .desktop .line-2 {
+    position: absolute;
+    width: 45px;
+    height: 3px;
+    top: 18px;
+    left: 321px;
+  }
+  
+  .desktop .text-wrapper-9 {
+    position: absolute;
+    width: 290px;
+    height: 39px;
+    top: 0;
+    left: 38px;
+    text-shadow: 0px 4px 4px #00000040;
+    -webkit-text-stroke: 0.5px #fadeb680;
+    font-family: "Gentium Basic-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .p {
+    position: absolute;
+    width: 465px;
+    height: 100px;
+    top: 897px;
+    left: 959px;
+    font-family: "Italianno-Regular", Helvetica;
+    font-weight: 400;
+    color: #fadeb6;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .desktop .header {
+    position: absolute;
+    width: 1446px;
+    height: 113px;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+  }
+  
+  .desktop .overlap-4 {
+    position: relative;
+    width: 1440px;
+    height: 113px;
+    background-color: #ffffff;
+  }
+  
+  .desktop .user-fill {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 40px;
+    left: 1351px;
+    object-fit: cover;
+  }
+  
+  .desktop .text-wrapper-10 {
+    position: absolute;
+    width: 205px;
+    height: 78px;
+    top: 18px;
+    left: 618px;
+    font-family: "Island Moments-Regular", Helvetica;
+    font-weight: 400;
+    color: #c48936;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .desktop .menu-line {
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    top: 32px;
+    left: 49px;
+    object-fit: cover;
+  }
+  
+  .desktop .text-wrapper-11 {
+    position: absolute;
+    width: 135px;
+    height: 35px;
+    top: 40px;
+    left: 127px;
+    font-family: "Italiana-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .desktop .text-wrapper-12 {
+    position: absolute;
+    width: 170px;
+    height: 35px;
+    top: 40px;
+    left: 289px;
+    font-family: "Italiana-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
