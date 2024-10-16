@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    flex: 1;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style: none;
+    margin-top: 20px;
+    max-height: 300px; /* Limit the height of the task list */
+    overflow-y: auto;  /* Make it scrollable if it exceeds max height */
+    padding-right: 10px;
+}
+
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;  /* Align items at the top */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    word-wrap: break-word;    /* Ensure long text breaks */
+    position: relative;       /* Make space for buttons */
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+li .task-text {
+    flex: 1;
+    word-wrap: break-word;   /* Wrap long words */
+    white-space: pre-wrap;   /* Ensure long words break */
+    padding-right: 20px;     /* Ensure space for buttons */
+    max-width: 220px;        /* Limit the width of the text area */
+    overflow-wrap: break-word;
+}
+
+li .task-buttons {
+    display: flex;
+    gap: 5px;                /* Spacing between buttons */
+}
+
+li button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+li .edit-btn {
+    background-color: #ffc107; /* Yellow for edit button */
+}
+
+li .complete-btn {
+    background-color: #28a745; /* Green for complete button */
+}
+
+li button:hover {
+    opacity: 0.8;              /* Slight opacity effect on hover */
+}
