@@ -54,6 +54,40 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function saveTask(taskText) {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.push({ text: taskText, completed: false });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function removeTask(taskText) {
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks = tasks.filter(task => task.text !== taskText);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function updateTaskStatus(taskText) {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.forEach(task => {
+            if (task.text === taskText) {
+                task.completed = !task.completed;
+            }
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+ 
+    function updateTaskText(oldText, newText) {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.forEach(task => {
+            if (task.text === oldText) {
+                task.text = newText;
+            }
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+});
+
+
     // function createTask(taskText, isCompleted = false) {
     //     const li = document.createElement('li');
     //     li.innerHTML = `
@@ -91,36 +125,3 @@ document.addEventListener('DOMContentLoaded', function () {
     //         }
     //     });
     // }
-
-    function saveTask(taskText) {
-        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        tasks.push({ text: taskText, completed: false });
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
-
-    function removeTask(taskText) {
-        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        tasks = tasks.filter(task => task.text !== taskText);
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
-
-    function updateTaskStatus(taskText) {
-        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        tasks.forEach(task => {
-            if (task.text === taskText) {
-                task.completed = !task.completed;
-            }
-        });
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
-
-    function updateTaskText(oldText, newText) {
-        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        tasks.forEach(task => {
-            if (task.text === oldText) {
-                task.text = newText;
-            }
-        });
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
-});
