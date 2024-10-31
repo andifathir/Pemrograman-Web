@@ -78,11 +78,11 @@ li {
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;  /* Align items at the top */
+    align-items: flex-start;
     border-radius: 5px;
     border: 1px solid #ddd;
-    word-wrap: break-word;    /* Ensure long text breaks */
-    position: relative;       /* Make space for buttons */
+    word-wrap: break-word;
+    position: relative;
 }
 
 li.completed {
@@ -92,16 +92,16 @@ li.completed {
 
 li .task-text {
     flex: 1;
-    word-wrap: break-word;   /* Wrap long words */
-    white-space: pre-wrap;   /* Ensure long words break */
-    padding-right: 20px;     /* Ensure space for buttons */
-    max-width: 220px;        /* Limit the width of the text area */
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    padding-right: 20px;
+    max-width: 220px;
     overflow-wrap: break-word;
 }
 
 li .task-buttons {
     display: flex;
-    gap: 5px;                /* Spacing between buttons */
+    gap: 5px;
 }
 
 li button {
@@ -115,13 +115,13 @@ li button {
 }
 
 li .edit-btn {
-    background-color: #ffc107; /* Yellow for edit button */
+    background-color: #ffc107;
 }
 
 li .complete-btn {
-    background-color: #28a745; /* Green for complete button */
+    background-color: #28a745;
 }
 
 li button:hover {
-    opacity: 0.8;              /* Slight opacity effect on hover */
+    opacity: 0.8;
 }

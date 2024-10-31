@@ -51,9 +51,16 @@ for (var i = 0; i < operator.length; i++) {
       output = output == "" ? "" : reverseNumberFormat(output);
       history = history + output;
 
+      if (output == "" && history != "") {
+        // If the last character is an operator, don't add another operator
+        if (isNaN(history[history.length - 1])) {
+          history = history.substr(0, history.length - 1);
+        }
+      }
+
       if (this.id == "=") {
         history = history.replace(/\^/g, "**");
-        history = history.replace(/\mod/g, "%");
+        // history = history.replace(/\mod/g, "%");
         var result = eval(history);
         printOutput(result);
         printHistory("");
@@ -64,13 +71,13 @@ for (var i = 0; i < operator.length; i++) {
       }
       // Modulus functionality
       else if (this.id == "mod") {
-        history = history + "mod";
+        history = history + "%";
         printHistory(history);
         printOutput("");
       }
       // Power functionality
       else if (this.id == "power") {
-        history = history + "^"; // Keep ^ for display, but will replace it in eval step
+        history = history + "^";
         printHistory(history);
         printOutput("");
       }
@@ -88,12 +95,12 @@ for (var i = 0; i < operator.length; i++) {
       }
       // Handle other operators without overwriting
       else {
-        if (output == "" && history != "") {
-          // If the last character is an operator, don't add another operator
-          if (isNaN(history[history.length - 1])) {
-            history = history.substr(0, history.length - 1);
-          }
-        }
+        // if (output == "" && history != "") {
+        //   // If the last character is an operator, don't add another operator
+        //   if (isNaN(history[history.length - 1])) {
+        //     history = history.substr(0, history.length - 1);
+        //   }
+        // }
         history = history + this.id;
         printHistory(history);
         printOutput("");
