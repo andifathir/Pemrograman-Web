@@ -15,3 +15,4 @@ abstract class Watch {
     // Abstract method
     abstract public function getDescription();
 }
+?>

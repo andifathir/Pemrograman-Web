@@ -13,3 +13,4 @@ class WatchController {
         return new AnalogWatch($brand, $price, $material);
     }
 }
+?>
