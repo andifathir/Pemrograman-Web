@@ -1,10 +1,10 @@
 <?php
 
-require_once __DIR__ . "/Traits/DiscountTrait.php";
-require_once __DIR__ . "/Models/Watch.php";
-require_once __DIR__ . "/Models/DigitalWatch.php";
-require_once __DIR__ . "/Models/AnalogWatch.php";
-require_once __DIR__ . "/Controllers/WatchController.php";
+require_once __DIR__ . '/Traits/DiscountTrait.php';
+require_once __DIR__ . '/Models/Watch.php';
+require_once __DIR__ . '/Models/DigitalWatch.php';
+require_once __DIR__ . '/Models/AnalogWatch.php';
+require_once __DIR__ . '/Controllers/WatchController.php';
 
 use Controllers\WatchController;
 
