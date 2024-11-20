@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Eater&family=Fontdiner+Swanky&family=Lacquer&family=Manrope:wght@200..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Metal+Mania&family=Nosifer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+body {
+  font-family: "Merriweather", serif;
+}
+.homepg {
+  height: 100vh;
+  width: 100%;
+}
+.logo {
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 50px;
+  margin-right: 3%;
+}
+.navbar {
+  height: 80px;
+  display: flex;
+  position: fixed;
+  padding: 2% 6%;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 999;
+  top: 0;
+  transition: background-color 0.5s;
+}
+.navbar.scrolled {
+  background-color: #888;
+  box-shadow: 0 2px 5px rgba(225, 162, 0, 0.2);
+}
+.navbar-items {
+  position: absolute;
+  background-color: hsl(32deg 100% 49% /50%);
+  backdrop-filter: blur(14px);
+  height: 100vh;
+  width: 350px;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  margin-top: 0;
+  transition: all 1s ease-in;
+}
+.navbar-items ul {
+  margin-left: 2%;
+  padding-top: 40%;
+}
+.navbar-items ul li {
+  margin: 13% 0;
+  margin-left: 15px;
+  list-style: none;
+}
+.navbar-items ul li a {
+  color: #fff;
+  padding: 9px 25px;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+.navbar-items ul li a:hover {
+  color: #fff;
+  border: 2px solid #fff;
+}
+.burger {
+  z-index: 3;
+  color: #fff;
+  font-size: 40px;
+  width: 50px; /* Square width */
+  height: 50px; /* Square height */
+  display: flex; /* Center the icon */
+  align-items: center; /* Vertically center the icon */
+  justify-content: center; /* Horizontally center the icon */
+  background-color: #888; /* Optional background */
+  border-radius: 5px; /* Slightly rounded corners (optional) */
+  cursor: pointer; /* Makes it clear it's clickable */
+}
+
+.h-class {
+  right: -100%;
+}
+.v-class {
+  right: 0%;
+}
+/* _________content */
+.content {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+.left {
+  width: 60%;
+}
+.left_box {
+  width: 40%;
+  top: 50%;
+  left: 27%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  text-align: left;
+}
+.left_box h2 {
+  color: #ea9200;
+}
+.left_box h1 {
+  font-size: 4em;
+  padding: 2% 0;
+}
+.left_box p {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+.btn {
+  padding: 12px 13px;
+  margin-top: 3%;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid #000;
+}
+.btn:hover {
+  background: transparent;
+  color: #000;
+  box-shadow: 3px 28px 43px 11px rgba(0, 0, 0, 0.33);
+}
+.right {
+  width: 40%;
+  background: url(assets/images/pic1.png) no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #000;
+}
+.right img {
+  transform: translateX(-50%);
+  width: 300px;
+}
+.text {
+  display: flex;
+  align-items: baseline;
+  color: #fff;
+  right: 5%;
+  bottom: 5%;
+  position: absolute;
+}
+.line_text {
+  font-size: 3em;
+}
+.line {
+  width: 70px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+/* _______responsive */
+@media only screen and (max-width: 1077px) {
+  .left_box {
+    left: 23%;
+  }
+  .left_box h1 {
+    font-size: 3em;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .right {
+    height: 70%;
+    width: 55%;
+  }
+  .right img {
+    width: 270px;
+  }
+  .left_box {
+    width: 90%;
+    left: 5%;
+    top: 70%;
+    transform: translate(0%, 0%);
+    padding: 5% 0;
+  }
+}
+
+.featured {
+  margin-top: 50px;
+  padding-top : 50px;
+  text-align: center;
+  background-color: black;
+}
+
+.featured h2 {
+  font-size: 50px; /* Adjust size as needed */
+  color: #fbdeb7; /* Change color based on your design */
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  /* border: 1px solid red; */
+}
+
+.swiper {
+  width: calc(100% - 15%);
+  height: calc(100vh - 4rem);
+  position: absolute;
+  /* border: 1px solid red; */
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: calc(100% - 15%);
+  border: 3px solid #fbdeb7;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.watch-name {
+  position: flex;
+  margin-top: 10px;
+  /* margin-right: 100px; */
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.pagination_ {
+  position: absolute;
+  width: calc(100%);
+}
+
+.pagination_ div[class^="swiper-button"]::after {
+  display: none;
+}
+
+.pagination_ div[class^="swiper-button"] {
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgb(75, 75, 75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #fbdeb7;
+}
+
+.pagination_ div[class^="swiper-button"] img {
+  width: 60%;
+}
+
+.swiper .swiper-pagination-bullet {
+  background: grey;
+  opacity: 0.5;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  width: 20px;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+/* Footer */
+
+footer {
+  background-color: white;
+  color: black;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-content h3 {
+  margin-bottom: 10px;
+}
+
+.footer-content .copyright a {
+  color: #c58936;
+  font-size: 28px;
+  text-decoration: none;
+  font-family: "Brush Script MT";
+}
+
+.footer-content .copyright p {
+  margin: 0; /* Remove default margin */
+}
+
+.social-media a {
+  margin: 0 10px;
+}
+
+.social-media img {
+  width: 24px; /* Adjust size as needed */
+  height: auto;
+}
+
+/* items.html */
+.items {
+  padding: 2rem;
+  text-align: center;
+}
+
+.items-content {
+  margin-top: 80px;
+  font-size: 60;
+  font-size: 1.5rem;
+}
+
+.items-container {
+  padding-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.item-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item-card img {
+  width: 100%;
+  height: calc(100% - 40%);
+  object-fit: cover;
+  object-position: center;
+}
+
+.item-card h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.item-card p {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.item-card .btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.item-card .btn:hover {
+  background-color: #444;
+}
+
