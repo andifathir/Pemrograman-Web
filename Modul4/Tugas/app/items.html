@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watches - Items</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="navbar">
+      <div class="logo">
+        <i class="ri-hourglass-2-line"></i>
+        <span>TIMELESS</span>
+      </div>
+      <nav class="navbar-items h-class">
+        <ul class="nav v-class">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#ABOUT">ABOUT</a></li>
+          <li><a href="#CATEGORY">CATEGORY</a></li>
+          <li><a href="items.html">ITEMS</a></li>
+        </ul>
+      </nav>
+      <div class="burger"><i class="ri-menu-4-line"></i></div>
+    </div>
+
+    <!-- Items Section -->
+    <section class="items" id="ITEMS">
+      <div class="items-content">
+        <h1>All Watch Products</h1>
+        <div class="items-container" id="items-container">
+          <!-- Items will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="social-media">
+          <h3>Follow Us</h3>
+          <a href="#"
+            ><img src="assets/icon/facebook-line.svg" alt="Facebook"
+          /></a>
+          <a href="#"
+            ><img src="assets/icon/instagram-line.svg" alt="Instagram"
+          /></a>
+          <a href="#"
+            ><img src="assets/icon/twitter-x-line.svg" alt="Twitter"
+          /></a>
+          <a href="#"><img src="assets/icon/mail-line.svg" alt="Mail" /></a>
+        </div>
+
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <p>Email: support@timeless.com</p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+
+        <div class="copyright">
+          <a href="#">TimeLessss</a>
+          <p>&copy; 2024 TimeLess. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let burger = document.querySelector(".burger");
+      let nav = document.querySelector(".nav");
+      let navbarItem = document.querySelector(".navbar-items");
+
+      burger.addEventListener("click", () => {
+        navbarItem.classList.toggle("h-class");
+        nav.classList.toggle("v-class");
+      });
+
+      // navbar scroll
+      window.addEventListener("scroll", () => {
+        let navbar = document.querySelector(".navbar");
+        if (window.scrollY > 20) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      fetch("http://localhost/Modul4/Tugas/app/db.php")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const itemsContainer = document.getElementById("items-container");
+          itemsContainer.innerHTML = ""; // Clear existing content
+
+          data.forEach((product) => {
+            const card = document.createElement("div");
+            card.classList.add("item-card");
+            card.innerHTML = `
+                <img src="${
+                  product.image_url || "assets/images/AP royal oak.webp"
+                }" alt="${product.name || "Unnamed Product"}" />
+                <h2>${product.name || "Unnamed Product"}</h2>
+                <p>$${product.price || "N/A"}</p>
+                <button class="btn">View Details</button>
+            `;
+            itemsContainer.appendChild(card);
+          });
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    </script>
+  </body>
+</html>
