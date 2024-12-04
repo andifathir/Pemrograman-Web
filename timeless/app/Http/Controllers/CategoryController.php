@@ -15,7 +15,18 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $category = Category::create($request->all());
+
+        $validatedData = $request->validate([
+            'name' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        // Create the product
+        $category = Category::create([
+            'name' => $validatedData['name'],
+            'description' => $validatedData['description'],
+        ]);
+
         return response()->json($category, 201);
     }
 
@@ -27,27 +38,21 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         // Find the product by ID
-        $product = Category::findOrFail($id);
+        $category = Category::findOrFail($id);
 
         // Validate input data, including the image upload (if present)
-        $request->validate([
+        $validatedData = $request->validate([
             'name' => 'nullable|string|max:255',
             'description' => 'nullable|string',
         ]);
 
-        // Update only the fields that are provided in the request
-        if ($request->has('name')) {
-            $product->name = $request->input('name');
-        }
-        if ($request->has('description')) {
-            $product->description = $request->input('description');
-        
-        }
+        // Update the category
+        $category->update([
+            'name' => $validatedData['name'] ?? $category->name,
+            'description' => $validatedData['description'] ?? $category->description,
+        ]);
 
-        // Save the product
-        $product->save();
-
-        return response()->json(['message' => 'Product updated successfully', 'data' => $product], 200);
+        return response()->json($category);
     }
 
     public function destroy($id)
