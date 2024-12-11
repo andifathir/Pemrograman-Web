@@ -24,24 +24,21 @@ class ProductController extends Controller
             'description' => 'nullable|string',
             'price' => 'required|numeric',
             'quantity_in_stock' => 'required|integer',
-            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validate image if present
-            'category_ids' => 'nullable|array',  // Ensure category_ids is an array
-            'category_ids.*' => 'exists:categories,id', // Validate each category_id exists in the categories table
+            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category_ids' => 'nullable|array',
+            'category_ids.*' => 'exists:categories,id',
         ]);
 
         // Handle file upload if there is an image
         if ($request->hasFile('image_url')) {
-            $imagePath = $request->file('image_url')->store('products', 'public');
-            // Get the original file name
+            // $imagePath = $request->file('image_url')->store('products', 'public');
             $originalFileName = $request->file('image_url')->getClientOriginalName();
 
-            // Store the file with the original name in the 'products' directory in public storage
             $imagePath = $request->file('image_url')->storeAs('products', $originalFileName, 'public');
         } else {
-            $imagePath = null; // Handle case when there's no image
+            $imagePath = null;
         }
 
-        // Create the product
         $product = Product::create([
             'name' => $validatedData['name'],
             'brand' => $validatedData['brand'],
@@ -51,7 +48,6 @@ class ProductController extends Controller
             'image_url' => $imagePath,
         ]);
 
-        // Attach categories to the product (if category_ids is provided)
         if (isset($validatedData['category_ids'])) {
             $product->categories()->sync($validatedData['category_ids']);
         }
@@ -61,7 +57,6 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        // Return product with categories
         return Product::with('categories')->findOrFail($id);
     }
 
