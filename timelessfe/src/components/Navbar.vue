@@ -9,7 +9,7 @@
     <nav class="navbar-items h-class">
       <ul class="nav v-class">
         <li><router-link to="/">HOME</router-link></li>
-        <li><router-link to="#ABOUT">ABOUT</router-link></li>
+        <li><router-link to="/crud">CRUD</router-link></li>
         <li><router-link to="#CATEGORY">CATEGORY</router-link></li>
         <li><router-link to="/items">ITEMS</router-link></li> <!-- Link to items page -->
       </ul>

@@ -4,9 +4,15 @@
   margin: 0;
   padding: 0;
   text-transform: capitalize;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* min-height: 100vh; */
 }
 body {
   font-family: "Merriweather", serif;
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh;
 }
 .homepg {
   height: 100vh;
@@ -284,6 +290,7 @@ footer {
   padding: 20px 0;
   text-align: center;
   width: 100%; /* Ensure it spans the full width */
+  margin-top: auto;
 }
 
 .footer-content {
