@@ -12,7 +12,7 @@ export default {
   methods: {
     // Navigate to the Products CRUD route
     goToProducts() {
-      this.$router.push("/products");
+      this.$router.push("/postsproducts");
     },
     // Navigate to the Categories CRUD route
     goToCategories() {

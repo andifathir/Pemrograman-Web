@@ -11,7 +11,8 @@
         <li><router-link to="/">HOME</router-link></li>
         <li><router-link to="/crud">CRUD</router-link></li>
         <li><router-link to="#CATEGORY">CATEGORY</router-link></li>
-        <li><router-link to="/items">ITEMS</router-link></li> <!-- Link to items page -->
+        <li><router-link to="/items">ITEMS</router-link></li>
+        <!-- Link to items page -->
       </ul>
     </nav>
     <!-- Burger icon -->
@@ -24,9 +25,9 @@ export default {
   name: "Navbar",
   mounted() {
     // Get references to the DOM elements after the component has been mounted
-    const burger = this.$el.querySelector('.burger');
-    const nav = this.$el.querySelector('.nav');
-    const navbarItem = this.$el.querySelector('.navbar-items');
+    const burger = this.$el.querySelector(".burger");
+    const nav = this.$el.querySelector(".nav");
+    const navbarItem = this.$el.querySelector(".navbar-items");
 
     // Ensure the elements exist before adding the event listener
     if (burger && nav && navbarItem) {
@@ -35,24 +36,23 @@ export default {
         nav.classList.toggle("v-class");
       });
     } else {
-      console.warn("The .burger, .nav, or .navbar-items elements were not found.");
+      console.warn(
+        "The .burger, .nav, or .navbar-items elements were not found."
+      );
     }
 
     // Optional: Handle scrolling behavior for navbar
     window.addEventListener("scroll", () => {
-      const navbar = this.$el.querySelector(".navbar");
-      if (navbar) {
-        if (window.scrollY > 20) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
+      let navbar = document.querySelector(".navbar");
+      if (window.scrollY > 20) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
       }
     });
-  }
+  },
 };
 </script>
 
 <style scoped>
-/* Add styles here as needed */
 </style>

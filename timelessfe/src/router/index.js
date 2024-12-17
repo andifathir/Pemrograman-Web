@@ -17,22 +17,22 @@ const routes = [
     component: () => import(/* webpackChunkName: "home" */ "../views/crud.vue"),
   },
   {
-    path: "/posts",
+    path: "/postsproducts",
     name: "posts.index",
     component: () =>
-      import(/* webpackChunkName: "index" */ "../views/posts/products/index.vue"),
+      import(/* webpackChunkName: "index" */ "../views/products/index.vue"),
   },
   {
-    path: "/create",
+    path: "/createproducts",
     name: "posts.create",
     component: () =>
-      import(/* webpackChunkName: "create" */ "../views/posts/products/create.vue"),
+      import(/* webpackChunkName: "create" */ "../views/products/create.vue"),
   },
   {
-    path: "/edit/:id",
+    path: "/editproducts/:id",
     name: "posts.edit",
     component: () =>
-      import(/* webpackChunkName: "edit" */ "../views/posts/products/edit.vue"),
+      import(/* webpackChunkName: "edit" */ "../views/products/edit.vue"),
   },
   
 ];

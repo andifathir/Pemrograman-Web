@@ -11,7 +11,7 @@
 <script>
 import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
-import 'swiper/swiper-bundle.css';
+// import 'swiper/swiper-bundle.css';
 
 
 export default {
