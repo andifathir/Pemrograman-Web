@@ -12,11 +12,11 @@ export default {
   methods: {
     // Navigate to the Products CRUD route
     goToProducts() {
-      this.$router.push("/postsproducts");
+      this.$router.push("/crudproducts");
     },
     // Navigate to the Categories CRUD route
     goToCategories() {
-      this.$router.push("/categories");
+      this.$router.push("/crudcategories");
     },
   },
 };
@@ -24,9 +24,6 @@ export default {
 
 <template>
   <div class="page-container">
-    <!-- Navbar Component -->
-    <Navbar />
-
     <!-- Main Content -->
     <div class="content">
       <h2>Choose A CRUD Operation</h2>
@@ -37,9 +34,6 @@ export default {
         </button>
       </div>
     </div>
-
-    <!-- Footer Component -->
-    <Footer />
   </div>
 </template>
 

@@ -33,8 +33,7 @@ export default {
 };
 </script>
 
-<template>
-  <Navbar />
+<template> 
   <section class="homepg" id="HOME">
     <div class="content">
       <div class="left">
@@ -58,11 +57,9 @@ export default {
       </div>
     </div>
   </section>
-
   <div class="featured">
     <h2>Featured</h2>
   </div>
-
   <div class="section">
       <!-- Slider main container -->
       <div class="swiper">
@@ -120,5 +117,4 @@ export default {
         </div>
       </div>
     </div>
-  <Footer />
 </template>

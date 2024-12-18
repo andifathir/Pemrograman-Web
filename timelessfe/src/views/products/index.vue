@@ -1,12 +1,6 @@
 <script setup>
-import Navbar from '../../components/Navbar.vue';
-import Footer from '../../components/Footer.vue';
-import { ref, onMounted } from "vue";
-import { useRouter } from "vue-router";
+import { ref, onMounted, computed } from "vue";
 import api from "../../api";
-
-// Initialize router
-// const router = useRouter();
 
 // Define state variables
 const products = ref([]);
@@ -78,9 +72,13 @@ const saveProduct = async () => {
 
     if (editingProductId.value) {
       // Update product
-      await api.post(`/api/products/${editingProductId.value}?_method=PUT`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      await api.post(
+        `/api/products/${editingProductId.value}?_method=PUT`,
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
       console.log("Product updated successfully!");
     } else {
       // Create product
@@ -139,6 +137,33 @@ const deleteProduct = async (id) => {
   fetchDataProducts();
 };
 
+// Add a helper to get the category name by ID
+const getCategoryName = (categoryId) => {
+  const category = categories.value.find((cat) => cat.id === categoryId);
+  return category ? category.name : "";
+};
+
+// Add a helper to remove a selected category
+const removeCategory = (categoryId) => {
+  newProduct.value.category_ids = newProduct.value.category_ids.filter(
+    (id) => id !== categoryId
+  );
+};
+
+// Add a helper to add a category (if not already selected)
+const addCategory = (categoryId) => {
+  if (!newProduct.value.category_ids.includes(categoryId)) {
+    newProduct.value.category_ids.push(categoryId);
+  }
+};
+
+// Compute available categories
+const availableCategories = computed(() =>
+  categories.value.filter(
+    (category) => !newProduct.value.category_ids.includes(category.id)
+  )
+);
+
 // Fetch data on mount
 onMounted(() => {
   fetchDataProducts();
@@ -148,9 +173,6 @@ onMounted(() => {
 
 <template>
   <div class="app-container">
-    <!-- Navbar -->
-    <Navbar />
-
     <!-- Main Container -->
     <div class="main-container">
       <!-- Create or Edit Product Section -->
@@ -197,7 +219,39 @@ onMounted(() => {
             rows="4"
             class="textarea"
           ></textarea>
+          <div>
+            <label class="label">Categories</label>
+            <div class="tag-picker">
+              <!-- Selected Tags -->
+              <div class="selected-tags">
+                <span
+                  v-for="categoryId in newProduct.category_ids"
+                  :key="categoryId"
+                  class="tag"
+                >
+                  {{ getCategoryName(categoryId) }}
+                  <button
+                    @click="removeCategory(categoryId)"
+                    class="remove-btn"
+                  >
+                    &times;
+                  </button>
+                </span>
+              </div>
 
+              <!-- Available Categories -->
+              <div class="tag-options">
+                <button
+                  v-for="category in availableCategories"
+                  :key="category.id"
+                  @click="addCategory(category.id)"
+                  class="tag-option"
+                >
+                  {{ category.name }}
+                </button>
+              </div>
+            </div>
+          </div>
           <div class="form-row">
             <div>
               <label class="label">Product Image</label>
@@ -206,18 +260,6 @@ onMounted(() => {
                 @change="handleFileChange($event)"
                 class="file-input"
               />
-            </div>
-            <div>
-              <label class="label">Categories</label>
-              <select v-model="newProduct.category_ids" multiple class="select">
-                <option
-                  v-for="category in categories"
-                  :key="category.id"
-                  :value="category.id"
-                >
-                  {{ category.name }}
-                </option>
-              </select>
             </div>
           </div>
 
@@ -252,6 +294,17 @@ onMounted(() => {
             <h3 class="product-title">{{ product.name }}</h3>
             <p class="product-description">{{ product.description }}</p>
             <p class="product-price">${{ product.price }}</p>
+
+            <!-- Categories -->
+            <div class="product-categories">
+              <strong>Categories:</strong>
+              <ul>
+                <li v-for="category in product.categories" :key="category.id">
+                  {{ category.name }}
+                </li>
+              </ul>
+            </div>
+
             <div class="product-actions">
               <button @click="editProduct(product)" class="edit-button">
                 Edit
@@ -265,41 +318,22 @@ onMounted(() => {
         <p v-else class="no-products">No products available.</p>
       </div>
     </div>
-
-    <!-- Footer -->
-    <Footer />
   </div>
 </template>
-
 
 <style scoped>
 .app-container {
   font-family: Arial, sans-serif;
   color: #333;
   background-color: #f9f9f9;
-}
-
-.navbar {
-  background-color: #fff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  margin-top: 80px;
 }
 
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  /* border: #c53030 2px solid; */
 }
 
 .card {
@@ -363,7 +397,7 @@ onMounted(() => {
 
 .product-image {
   width: 100%;
-  height: 150px;
+  height: 250px;
   object-fit: cover;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -385,17 +419,36 @@ onMounted(() => {
 }
 
 .product-actions button {
-  background: none;
-  border: none;
+  border: 2px solid #d1d5db;
+  border-radius: 5px;
   cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .edit-button {
-  color: #4f46e5;
+  color: #ffffff;
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.edit-button:hover {
+  background-color: #4338ca;
+  border-color: #4338ca;
 }
 
 .delete-button {
-  color: #e53e3e;
+  color: #ffffff;
+  background-color: #e53e3e;
+  border-color: #e53e3e;
+  margin-left: 15px;
+}
+
+.delete-button:hover {
+  background-color: #c53030;
+  border-color: #c53030;
 }
 
 .cancel-button {
@@ -411,10 +464,59 @@ onMounted(() => {
   background-color: #c53030;
 }
 
-.footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
+.tag-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.selected-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.tag {
+  background-color: #4f46e5;
   color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.tag .remove-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.tag .remove-btn:hover {
+  color: #c53030;
+}
+
+.tag-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-option {
+  background-color: #f3f4f6;
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.tag-option:hover {
+  background-color: #e5e7eb;
 }
 </style>

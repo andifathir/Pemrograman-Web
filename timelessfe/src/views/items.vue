@@ -36,9 +36,6 @@
 </script>
 
 <template>
-  <!-- Navbar Component -->
-  <Navbar />
-
   <!-- Items Section -->
   <section class="items" id="ITEMS">
     <div class="items-content">
@@ -86,9 +83,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer Component -->
-  <Footer />
 </template>
 
 <style scoped>
