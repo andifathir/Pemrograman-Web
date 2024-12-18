@@ -7,15 +7,21 @@ const routes = [
     component: () => import(/* webpackChunkName: "home" */ "../views/home.vue"),
   },
   {
-    path: "/items",
-    name: "items",
-    component: () => import(/* webpackChunkName: "home" */ "../views/items.vue"),
-  },
-  {
     path: "/crud",
     name: "crud",
     component: () => import(/* webpackChunkName: "home" */ "../views/crud.vue"),
   },
+  {
+    path: "/category",
+    name: "category",
+    component: () => import(/* webpackChunkName: "home" */ "../views/category.vue"),
+  },
+  {
+    path: "/items",
+    name: "items",
+    component: () => import(/* webpackChunkName: "home" */ "../views/items.vue"),
+  },
+  
   {
     path: "/crudproducts",
     name: "crud.products",

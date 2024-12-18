@@ -3,16 +3,20 @@
     <div class="footer-content">
       <div class="social-media">
         <h3>Follow Us</h3>
-        <a href="#"
-          ><img src="../assets/icon/facebook-line.svg" alt="Facebook"
-        /></a>
-        <a href="#"
-          ><img src="../assets/icon/instagram-line.svg" alt="Instagram"
-        /></a>
-        <a href="#"
-          ><img src="../assets/icon/twitter-x-line.svg" alt="Twitter"
-        /></a>
-        <a href="#"><img src="../assets/icon/mail-line.svg" alt="Mail" /></a>
+        <div class="social-icons">
+          <a href="#">
+            <img src="../assets/icon/facebook-line.svg" alt="Facebook" />
+          </a>
+          <a href="#">
+            <img src="../assets/icon/instagram-line.svg" alt="Instagram" />
+          </a>
+          <a href="#">
+            <img src="../assets/icon/twitter-x-line.svg" alt="Twitter" />
+          </a>
+          <a href="#">
+            <img src="../assets/icon/mail-line.svg" alt="Mail" />
+          </a>
+        </div>
       </div>
 
       <div class="contact-info">

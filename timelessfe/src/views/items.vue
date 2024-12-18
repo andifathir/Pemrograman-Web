@@ -1,15 +1,9 @@
 <script setup>
-  // Import necessary Vue composition API functions
   import { ref, onMounted } from 'vue';
-  import api from '../api'; // Assuming 'api' is a custom axios instance
-  
-  // Import Navbar and Footer components
-  import Navbar from '../components/Navbar.vue';
-  import Footer from '../components/Footer.vue';
+  import api from '../api';
 
-  // Define reactive variables to store product data and loading state
   const products = ref([]);
-  const isLoading = ref(true);  // Track loading state
+  const isLoading = ref(true);
 
   // Method to fetch product data
   const fetchDataProducts = async () => {
