@@ -1,36 +1,25 @@
-<script>
-import Navbar from '../components/Navbar.vue';
-import Footer from '../components/Footer.vue';
+<script setup>
 import { onMounted } from 'vue';
 import Swiper from 'swiper/bundle'; // Ensure you are importing Swiper properly
 
-export default {
-  name: 'home',
-  components: {
-    Navbar,
-    Footer,
-  },
-  setup() {
-    // Initialize Swiper after component is mounted
-    onMounted(() => {
-      const swiper = new Swiper(".swiper", {
-        direction: "horizontal",
-        loop: true,
-        slidesPerView: 3,
-        spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          type: "bullets",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    });
-  }
-};
+// Initialize Swiper after component is mounted
+onMounted(() => {
+  const swiper = new Swiper(".swiper", {
+    direction: "horizontal",
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+});
 </script>
 
 <template> 
